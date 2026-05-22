@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Delete Account</title>
+        <link rel="stylesheet" href="Style.css">
+
+        <style>
+            .header-row{
+                gap: 350px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <nav class="navbar">
+            <a href="#">Home</a>
+            <a href="help.html">Help Center</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="settings.html">Settings</a>
+            <a href="troubleshoot.html">Troubleshoot</a>
+            <a href="delete-account.html">Delete Account</a>
+        </nav>
+
+        <header>
+        <div class="header-row">
+    <div class="logo">PC</div>
+
+    <div class="header-text">
+        <h1>Permanently Delete Your Account</h1>
+        <p>Leave Anytime, Come Back Anytime.</p>
+        </div></div>
+    </header>
+
+    <main class="content">
+    <h2>Delete Account</h2>
+    <p>This action is permanent and cannot be undone.</p>
+
+    <button onclick="showDelete()" class="button-Delete">Delete My Account</button>
+
+    <div id="deleteBox"></div>
+
+    <script>
+        function showDelete() {
+            document.getElementById("deleteBox").innerHTML = `
+            <h3>Confirm Account Deletion</h3>
+            <p>Type <b>DELETE</b> to confirm: </p>
+            <input type ="text" id="confirmText">
+            <br><br>
+            <button onclick="finalDelete()" class="button-Delete">Confirm Delete</button>
+            `;
+        }
+
+        function finalDelete() {
+            let value =document.getElementById("confirmText").value;
+            if(value === "DELETE"){
+                alert("Account Deleted Successfully!")
+            }else {
+                alert("You must type DELETE to confirm.");
+            }
+        }
+    </script>
+</main>
+    </body>
+    </html>

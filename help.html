@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Help center</title>
+        <link rel="stylesheet" href="Style.css">
+
+        <style>
+            .header-row{
+                gap: 450px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <nav class="navbar">
+            <a href="#">Home</a>
+            <a href="help.html">Help Center</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="settings.html">Settings</a>
+            <a href="troubleshoot.html">Troubleshoot</a>
+            <a href="delete-account.html">Delete Account</a>
+        </nav>
+
+        <header>
+        <div class="header-row">
+    <div class="logo">PC</div>
+
+    <div class="header-text">
+        <h1>Help Center</h1>
+        <p>Select an option below to get support.</p>
+        </div></div>
+    </header>
+
+        <main class="content">
+        <div class="box-help">
+            <div class="links">
+                <a href="contact.html">Contact Us</a>
+                <a href="settings.html">Settings</a>
+                <a href="troubleshoot.html">Troubleshoot</a>
+                <a href="delete-account.html">Delete Account</a>
+            </div>
+        </div>
+
+        <div class="chatbox">
+            <h2>Live Support Chat</h2>
+
+            <div id="chatArea"></div>
+            <input type="text" id="msg" placeholder="Type your message..." class="input-msg">
+            <button onclick="sendMsg()" class="button-box">Send</button>
+        </div>
+        
+        </main>
+
+        <script>
+            function sendMsg() {
+                var msg = document.getElementById("msg").value;
+
+                if(msg !=="") {
+                    var chat = document.getElementById("chatArea");
+                    chat.innerHTML += "<p><b>You: </b>"+msg+"</p>";
+                    chat.innerHTML += "<p><b>We received your message.</p>";
+                        document.getElementById("msg").value = "";
+                }
+            }
+        </script>
+    </body>
+</html>
