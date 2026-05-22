@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DanceHub - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+            .header-row{
+                gap: 400px;
+            }
+        </style>
+</head>
+
+<body>
+
+     <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="dance-choreography.html">Dance Types & Choreography</a>
+        <a href="teachers.html">Teachers</a>
+        <a href="booking.html">Book Class</a>
+    </nav>
+
+    <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search dance types...">
+    <div class="button-search">
+    <button onclick="searchDance()">Search</button>
+    </div>
+</div>
+
+<script>
+function searchDance() {
+    let input = document.getElementById("searchInput").value.toLowerCase();
+    let cards = document.querySelectorAll(".dance-card");
+
+    cards.forEach(card => {
+        let title = card.querySelector("h3").innerText.toLowerCase();
+        if (title.includes(input)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
+</script>
+
+
+
+
+    <header>
+        <div class="header-row">
+    <div class="logo">PC</div>
+
+    <div class="header-text">
+        <h1>Welcome to DanceHub</h1>
+        <p>Your complete guide to global and Sri Lankan dance types.</p>
+        </div></div>
+    </header>
+<img src="Image1.jpg" class="banner-img" alt="Dance image">
+    
+    <main class="content">
+            <h2>About DanceHub</h2>
+            <p>
+                Welcome to <strong>DanceHub</strong>, your complete gateway to understanding dance styles 
+                from around the world. DanceHub is created for everyone who loves dance—beginners, students, 
+                performers, and anyone curious about how different dance forms work.
+            </p>
+
+            <p>
+                In this section, you will find everything about 
+                <strong>Dance Types & Choreography</strong>—how dances are created, how movements match the music, 
+                and how a story is expressed through steps, rhythm and emotion. Before selecting a dance type, 
+                you can explore the basics of choreography, learn how choreographers plan routines, and gain 
+                an understanding of the creative process behind every performance.
+            </p>
+
+            <p>
+                Each dance type comes with details such as origin, key features, steps, rhythm patterns, 
+                costumes, and performance style. DanceHub helps you discover dance, understand movement, 
+                and explore cultural beauty through choreography.
+            </p>
+
+            <p>
+                <strong>DanceHub — where every step begins.</strong>
+            </p>
+            
+            <section class="choose">
+            <h2>Explore DanceHub</h2>
+
+            <div class="dance-grid">
+                <a href="dance-choreography.html" class="dance-card">Dance Types & Choreography</a>
+                <a href="Teachers.html" class="dance-card">Teachers</a>
+                <a href="Booking.html" class="dance-card">Book a Class</a>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
